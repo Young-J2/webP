@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+    <body>
+        <h3>div 태그에 시계 만들기</h3>
+        <hr>
+        <div id="clock"></div>
+    
+        <script>
+            let timerID = setInterval("f()", 1000);
+            function f()
+            {
+                let now = new Date();
+                let clock = document.getElementById("clock");
+        
+                clock.innerHTML = now.toLocaleTimeString();
+            }
+        </script>
+    </body>
+    </html>

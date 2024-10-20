@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #menubar {
+            background: skyblue;
+            margin: 0;
+            padding: 0;
+            width: 567px;
+        }
+        #menubar ul li {
+            display: inline-block;
+            list-style-type: none;
+            padding: 0px 15px;
+        }
+        #menubar ul li a {
+            color: white;
+        }
+        #menubar ul li a:hover {
+            color: blue;
+        }
+        th, td {
+            background: aliceblue;
+            color: black;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border: solid black;
+            color: yellow;
+            margin-top: 20px; /* Add some margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <h3>Web Programming</h3>
+    <nav id="menubar">
+        <ul>
+            <li><a href="#">Week 1</a></li>
+            <li><a href="#">Week 2</a></li>
+            <li><a href="#">Week 3</a></li>
+            <li><a href="#">Week 4</a></li>
+        </ul>
+    </nav>
+    <hr><hr>
+    <section>
+        웹에 관하여
+        <details>
+            <summary>웹의 기본 목적</summary>
+            <p>웹의 기본 목적은 한 컴퓨터에서 만든 문서를 다른 컴퓨터에서 쉽게 볼 수 있게 하는 것이다.</p>
+        </details>
+        <details>
+            <summary>왜 Why?</summary>
+            <p>전 세계의 컴퓨터들을 인터넷으로 연결한 시스템을 WWW, 즉 웹이라고 부른다.</p>
+        </details>
+    </section>
+
+    <section>
+        <table border="1">
+            <caption><strong>Weekly Schedule</strong></caption>
+            <thead><tr><th>Week</th><th>Date</th><th>Contents</th></tr></thead>
+            <tbody>
+                <tr><td>1</td><td>Sept.2</td><td>
+                    <ul>
+                    <li>강의개요</li>
+                    <li>웹의 개념과 구조</li>
+                    <li>Visual Studio Code</li>
+                    </ul></td></tr>
+                <tr><td>2</td><td>Sept.9</td><td>HTML Review</td></tr>
+                <tr><td>3</td><td>Sept.16</td><td>CSS Review</td></tr>
+                <tr><td>4</td><td>Sept.23</td><td>JavaScript</td></tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <ol>
+            <li>
+                Week 1
+                <ul>
+                    <li><a href="#" download="pdf">강의 개요</a></li>
+                    <li><a href="#" download="pdf">웹의 개념과 구조</a></li>
+                    <li><a href="#" download="pdf">Visual Studio Code</a></li>
+                    <ol type="1">
+                        <li>설치</li>
+                        <li>유용한 plug-ins</li>
+                        <ul>
+                            <li>Material Theme</li>
+                            <li>Prettier</li>
+                            <li>indent-rainbow</li>
+                            <li>Auto Rename Tag</li>
+                            <li>HTML CSS Support</li>
+                            <li>Live Server</li>
+                        </ul>
+                        <li>EMMET</li>
+                    </ol>
+                </ul>
+            </li>
+            <li>
+                Week 2: <a href="HTML">HTML Review</a>
+                <br><u>Check Box</u><br>
+                <form>
+                    <input type="checkbox" value="1">HTML5
+                    <input type="checkbox" value="2">CSS3
+                    <input type="checkbox" value="3">JavaScript
+                </form><br>
+                <u>Radio Button</u>
+                <br>
+                <form>
+                    <input type="radio" name="options" value="HTML5">HTML5<br>
+                    <input type="radio" name="options" value="CSS3">CSS3<br>
+                    <input type="radio" name="options" value="JavaScript">JavaScript<br>
+                </form>
+                <br>
+                <u>Combo Box</u><br>
+                <select name="box">
+                    <option>HTML5</option>
+                    <option>CSS3</option>
+                    <option>JavaScript</option>
+                </select><br>
+            </li>
+            <li>
+                Week 3: <a href="CSS3">CSS3 Review</a>
+                <ul>
+                    <li>Selectors: *, tag, #id, .class, 가상클래스, attribute</li>
+                    <li>Properties: background-color, background, color, border-color, font-size, text-align, text-decoration, font-family,...</li>
+                    <li>Box Model
+                        <ul>
+                            <li>block 요소, inline 요소</li>
+                            <li>margin, padding, border, height, width</li>
+                        </ul>
+                    </li>
+                    <li>display: block, inline, inline-block</li>
+                    <li>position: absolute, relative, fixed, float</li>
+                </ul>
+            </li>
+            <li>Week 4:</li>
+        </ol>
+    </section>
+    <div class="box"></div>
+    <hr>
+    <footer>
+        Copyright&copy; 2024 by Jae-Young All Rights Reserved
+    </footer>
+</body>
+</html>

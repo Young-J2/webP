@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            text-align: center;
+        }
+        td {
+            width: 70px;
+        }
+        td input {
+            width: 90%;
+        }
+    </style>
+</head>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <form action="" id="form">
+        <input type="text" value="0" id="calc" style="width: 300px;" readonly>
+        <table>
+            <tr>
+                <td><input type="button" value="BACK" onclick="back()"></td>
+                <td><input type="button" value="CE" onclick="resetExp()"></td>
+                <td><input type="button" value="C" onclick="resetExp()"></td>
+                <td><input type="button" value="=" onclick="calculate()"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="7" onclick="inputValue(this)"></td>
+                <td><input type="button" value="8" onclick="inputValue(this)"></td>
+                <td><input type="button" value="9" onclick="inputValue(this)"></td>
+                <td><input type="button" value="/" onclick="inputValue(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="4" onclick="inputValue(this)"></td>
+                <td><input type="button" value="5" onclick="inputValue(this)"></td>
+                <td><input type="button" value="6" onclick="inputValue(this)"></td>
+                <td><input type="button" value="*" onclick="inputValue(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="inputValue(this)"></td>
+                <td><input type="button" value="2" onclick="inputValue(this)"></td>
+                <td><input type="button" value="3" onclick="inputValue(this)"></td>
+                <td><input type="button" value="-" onclick="inputValue(this)"></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="0" onclick="inputValue(this)"></td>
+                <td><input type="button" value="+" onclick="inputValue(this)"></td>
+                <td><input type="button" value="NONE"></td>
+                <td><input type="button" value="NONE"></td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        let exp = "";
+        let calc = document.getElementById("calc");
+
+        function inputValue(btn)
+        {
+            exp += btn.value;
+            calc.value = exp;
+        }
+
+        function back()
+        {
+            exp = exp.slice(0, -1);
+            calc.value = exp;
+
+            if (exp == "")
+            {
+                document.getElementById("form").reset();
+            }
+        }
+
+        function calculate()
+        {
+            calc.value = eval(calc.value);
+            exp = calc.value;
+        }
+
+        function resetExp()
+        {
+            exp = "";
+            document.getElementById("form").reset();
+        }
+    </script>
+</body>
+</html>

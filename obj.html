@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>객체 생성</title>
+    <script>
+    function register() { this.nStudents++; }
+    function unregister() { this.nStudents--; }
+    function getStudentCount() { return this.nStudents; }
+    </script>
+</head>
+<body>
+  <h3>1. 직접 객체 만들기</h3>
+  <script>
+    let class1 = new Object();
+    class1.korName = "웹프로그래밍";
+    class1.engName = "Web Programming";
+    class1.classCode = "V024003";
+    class1.nStudents = 0;
+    class1.register = register;
+    class1.unregister = unregister;
+    class1.getStudentCount = getStudentCount;
+    
+    document.write("교과목 이름 = ", class1.korName, "<br>");
+    document.write("교과목 영문 이름 = ", class1.engName, "<br>");
+    document.write("등록 학생 수 = ", class1.getStudentCount(), "<br>");
+    class1.register();
+    document.write("after register, 등록 학생 수 = ", class1.getStudentCount());
+  </script>
+  <hr>
+  <h3>2. 리터럴 표기법</h3>
+  <script>
+    let class2 = 
+    {
+      korName: "클라우드컴퓨팅",
+      engName: "Cloud Computing",
+      classCode: "V024005",
+      nStudents: 0,
+      register: function () { this.nStudents++ },
+      unregister: function () { this.nStudents--; },
+      getStudentCount: function () { return this.nStudents; }
+    };
+
+    document.write("교과목 이름 = ", class2.korName, "<br>");
+    document.write("교과목 영문 이름 = ", class2.engName, "<br>");
+    document.write("등록 학생 수 = ", class2.getStudentCount(), "<br>");
+    class2.register();
+    document.write("after register, 등록 학생 수 = ", class2.getStudentCount());
+  </script>
+  <hr>
+  <h3>3. Prototype</h3>
+  <script>
+    function Course(kName, eName, cCode) 
+    {
+      this.korName = kName;
+      this.engName = eName;
+      this.classCode = cCode;
+      this.nStudents = 0;
+      this.register = function () { this.nStudents++ };
+      this.unregister = function () { this.nStudents--; };
+      this.getStudentCount = function () { return this.nStudents; };
+    }
+      
+    let class3 = new Course("프로그래밍언어론", "Programming Langauges", "V024001");
+    document.write("교과목 이름 = ", class3.korName, "<br>");
+    document.write("교과목 영문 이름 = ", class3.engName, "<br>");
+    document.write("등록 학생 수 = ", class3.getStudentCount(), "<br>");
+    class3.register();
+    document.write("after register, 등록 학생 수 = ", class3.getStudentCount());
+  </script>
+</body>
+</html>

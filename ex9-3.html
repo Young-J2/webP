@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calculate(e)
+    {
+        if (e.key == "Enter")
+        {
+            document.getElementById("result").value = eval(document.getElementById("exp").value);
+        }
+    }
+</script>
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    수식을 입력하고 ENTER 입력 <br>
+    식 <input type="text" id="exp" onkeydown="calculate(event)"> <br>
+    값 <input type="text" id="result"> <br>
+</body>
+</html>
